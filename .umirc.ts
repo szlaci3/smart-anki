@@ -1,4 +1,5 @@
 import { defineConfig } from '@umijs/max';
+import EmptyLayout from '@/layouts/EmptyLayout';
 
 export default defineConfig({
   antd: {},
@@ -7,7 +8,7 @@ export default defineConfig({
   initialState: {},
   request: {},
   layout: {
-    title: '@umijs/max',
+    title: 'SmartAnki',
   },
   routes: [
     {
@@ -15,19 +16,9 @@ export default defineConfig({
       redirect: '/home',
     },
     {
-      name: '首页',
+      name: '',
       path: '/home',
       component: './Home',
-    },
-    {
-      name: '权限演示',
-      path: '/access',
-      component: './Access',
-    },
-    {
-      name: ' CRUD 示例',
-      path: '/table',
-      component: './Table',
     },
   ],
   npmClient: 'yarn',
