@@ -13,11 +13,7 @@ export default defineConfig({
   routes: [
     {
       path: '/',
-      redirect: '/home',
-    },
-    {
       name: '',
-      path: '/home',
       component: './Home',
     },
   ],
