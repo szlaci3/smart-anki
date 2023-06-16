@@ -3,19 +3,25 @@ import CardList from '@/components/CardList';
 import { cards } from '@/data/cards';
 import './index.less';
 
-function App() {
-  const [cardList, setCardList] = useState(cards);
+type Card = {
+  id: number;
+  sides: string[];
+  rate: '10minutes' | number | null;
+  reviewedAt: number | null;
+};
 
-  const handleRateCard = (cardId, rating) => {
-    const updatedCardList = cardList.map((card) => {
-      if (card.id === cardId) {
-        const newRate = rating === '10minutes' ? 1 : rating;
-        const newPrevView = Date.now();
-        return { ...card, rate: newRate, prevView: newPrevView };
-      }
-      return card;
-    });
-    setCardList(updatedCardList);
+function App() {
+  const [cardList, setCardList] = useState<Card>(cards);
+
+  const handleRateCard = (cardId, rate) => {
+    setCardList((prev) =>
+      prev.map((card: Card) => {
+        if (card.id === cardId) {
+          return { ...card, rate, reviewedAt: Date.now() };
+        }
+        return card;
+      }),
+    );
   };
 
   return (

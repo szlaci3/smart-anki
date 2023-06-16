@@ -6,7 +6,7 @@ export const cards = [
       'React is a JavaScript library for building user interfaces.',
     ],
     rate: null,
-    prevView: null,
+    reviewedAt: null,
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const cards = [
       'JSX is a syntax extension for JavaScript that allows you to write HTML-like code in your JavaScript files.',
     ],
     rate: null,
-    prevView: null,
+    reviewedAt: null,
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const cards = [
       'A component is a reusable piece of code that represents a part of a user interface.',
     ],
     rate: null,
-    prevView: null,
+    reviewedAt: null,
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export const cards = [
       'State is an object that represents the current state of a component.',
     ],
     rate: null,
-    prevView: null,
+    reviewedAt: null,
   },
   {
     id: 5,
@@ -42,6 +42,6 @@ export const cards = [
       'Props (short for "properties") are a way to pass data from a parent component to a child component.',
     ],
     rate: null,
-    prevView: null,
+    reviewedAt: null,
   },
 ];
