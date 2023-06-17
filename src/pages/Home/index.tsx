@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CardList from '@/components/CardList';
 import { cards } from '@/data/cards';
-import './index.less';
+import '../../index.less';
 
 type Card = {
   id: number;

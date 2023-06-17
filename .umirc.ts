@@ -13,8 +13,16 @@ export default defineConfig({
   routes: [
     {
       path: '/',
-      name: '',
+      //   redirect: '/home',
+      // },
+      // {
+      //   name: '首页',
+      // path: '/home',
       component: './Home',
+    },
+    {
+      path: '/cardForm',
+      component: './CardForm',
     },
   ],
   npmClient: 'yarn',
