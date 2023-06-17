@@ -1,5 +1,4 @@
 import { defineConfig } from '@umijs/max';
-import EmptyLayout from '@/layouts/EmptyLayout';
 
 export default defineConfig({
   antd: {},
