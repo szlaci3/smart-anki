@@ -11,6 +11,7 @@ export default defineConfig({
   },
   routes: [
     {
+      name: 'Review Cards',
       path: '/',
       //   redirect: '/home',
       // },
@@ -20,6 +21,7 @@ export default defineConfig({
       component: './Home',
     },
     {
+      name: 'Add Cards',
       path: '/cardForm',
       component: './CardForm',
     },
