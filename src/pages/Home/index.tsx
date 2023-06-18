@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import CardList from '@/components/CardList';
-import { cards } from '@/data/cards';
 import '../../index.less';
 
 type Card = {
@@ -10,18 +10,36 @@ type Card = {
   reviewedAt: number | null;
 };
 
-function App() {
-  const [cardList, setCardList] = useState<Card>(cards);
+function RateCards() {
+  const [cardList, setCardList] = useState<Card[]>([]);
 
-  const handleRateCard = (cardId, rate) => {
-    setCardList((prev) =>
-      prev.map((card: Card) => {
-        if (card.id === cardId) {
-          return { ...card, rate, reviewedAt: Date.now() };
-        }
-        return card;
-      }),
-    );
+  useEffect(() => {
+    axios
+      .get('/cards')
+      .then((response) => {
+        setCardList(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching flashcards:', error);
+      });
+  }, []);
+
+  const handleRateCard = (card, rate) => {
+    const updatedCardList = cardList.map((cardItem) => {
+      if (card.id === cardItem.id) {
+        return { ...cardItem, rate, reviewedAt: Date.now() };
+      }
+      return cardItem;
+    });
+
+    axios
+      .put(`/cards/${cardId}`, { ...card, rate, reviewedAt: Date.now() })
+      .then(() => {
+        setCardList(updatedCardList);
+      })
+      .catch((error) => {
+        console.error('Error updating flashcard:', error);
+      });
   };
 
   return (
@@ -33,4 +51,4 @@ function App() {
   );
 }
 
-export default App;
+export default RateCards;

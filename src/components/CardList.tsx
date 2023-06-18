@@ -8,7 +8,7 @@ function CardList({ cards, onRateCard }) {
   );
 
   const handleRateCard = (rating) => {
-    onRateCard(cards[currentCardIndex].id, rating);
+    onRateCard(cards[currentCardIndex], rating);
     setCurrentCardIndex((prev) => rand(cards.length, prev));
   };
 

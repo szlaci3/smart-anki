@@ -9,12 +9,11 @@ function Card({ card, onRateCard }) {
   };
 
   const handleRateCard = (rate) => {
-    onRateCard(card.id, rate);
+    onRateCard(rate);
     setRevealCount(0);
   };
 
   const option3 = card.rate === '10minutes' ? 2 : card.rate || 2;
-  // const option3 = card.rate === '10minutes' ? 2 : inputValue || 2;
   const option4 = Math.max(3, Math.floor(option3 * 1.4));
 
   return (
