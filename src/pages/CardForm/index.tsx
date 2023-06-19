@@ -24,7 +24,7 @@ const CardForm = () => {
     try {
       const card = {
         id,
-        sides,
+        sides: JSON.stringify(sides),
         rate: null,
         reviewedAt: null,
       };

@@ -17,7 +17,12 @@ function RateCards() {
     axios
       .get('/api/cards')
       .then((response) => {
-        setCardList(response.data);
+        setCardList(
+          response.data.map((card) => ({
+            ...card,
+            sides: JSON.parse(card.sides),
+          })),
+        );
       })
       .catch((error) => {
         console.error('Error fetching flashcards:', error);
@@ -33,7 +38,7 @@ function RateCards() {
     });
 
     axios
-      .put(`/api/cards/${cardId}`, {
+      .put(`/api/cards/${card.id}`, {
         ...card,
         rate,
         reviewedAt: Date.now(),
