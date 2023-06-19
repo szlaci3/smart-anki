@@ -40,6 +40,7 @@ function RateCards() {
     axios
       .put(`${SERVERIP}/cards/${card.id}`, {
         ...card,
+        sides: JSON.stringify(card.sides),
         rate,
         reviewedAt: Date.now(),
       })
