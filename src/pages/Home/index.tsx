@@ -15,7 +15,7 @@ function RateCards() {
 
   useEffect(() => {
     axios
-      .get('https://smart-anki-ws.onrender.com/cards')
+      .get('/api/cards')
       .then((response) => {
         setCardList(response.data);
       })
@@ -33,7 +33,7 @@ function RateCards() {
     });
 
     axios
-      .put(`https://smart-anki-ws.onrender.com/cards/${cardId}`, {
+      .put(`/api/cards/${cardId}`, {
         ...card,
         rate,
         reviewedAt: Date.now(),

@@ -29,7 +29,7 @@ const CardForm = () => {
         reviewedAt: null,
       };
 
-      await axios.post('https://smart-anki-ws.onrender.com/cards', card);
+      await axios.post('/api/cards', card);
     } catch (error) {
       console.error('Error creating card:', error);
       // Handle error
