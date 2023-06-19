@@ -15,7 +15,7 @@ function RateCards() {
 
   useEffect(() => {
     axios
-      .get('/api/cards')
+      .get(`${SERVERIP}/cards`)
       .then((response) => {
         setCardList(
           response.data.map((card) => ({
@@ -38,7 +38,7 @@ function RateCards() {
     });
 
     axios
-      .put(`/api/cards/${card.id}`, {
+      .put(`${SERVERIP}/cards/${card.id}`, {
         ...card,
         rate,
         reviewedAt: Date.now(),

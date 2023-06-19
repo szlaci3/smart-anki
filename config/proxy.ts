@@ -6,11 +6,11 @@
  * https://pro.ant.design/docs/deploy
  */
 export default {
-  dev: {
-    '/api/': {
-      target: 'https://smart-anki-ws.onrender.com',
-      changeOrigin: true,
-      pathRewrite: { '^/api': '' },
-    },
-  },
+  // dev: {
+  //   '/api/': {
+  //     target: 'https://smart-anki-ws.onrender.com',
+  //     changeOrigin: true,
+  //     pathRewrite: { '^/api': '' },
+  //   },
+  // },
 };
