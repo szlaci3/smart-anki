@@ -1,3 +1,5 @@
 # README
 
-`@umijs/max` 模板项目，更多功能参考 [Umi Max 简介](https://umijs.org/docs/max/introduce)
+Flashcards.
+
+Site can be visited at https://smart-anki.onrender.com/ . UMI · React hooks
