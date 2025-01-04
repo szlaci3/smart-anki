@@ -1,4 +1,4 @@
 Flashcards.
 
-Site can be visited at https://smartanki.netlify.app/ .
+Site can be visited at https://smart-anki.onrender.com/ .
 UMI · React hooks
