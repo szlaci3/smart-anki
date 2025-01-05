@@ -1,6 +1,9 @@
 {
   "private": true,
   "author": "Laszlo Szalai <l.szalai@super-staffing.com>",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "scripts": {
     "build": "max build",
     "dev": "max dev",
