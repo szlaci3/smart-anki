@@ -9,4 +9,8 @@ export default [
     path: '/cardForm',
     component: './CardForm',
   },
+  {
+    path: '/editCard/:id',
+    component: './EditCard',
+  },
 ];

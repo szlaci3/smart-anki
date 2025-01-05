@@ -13,6 +13,10 @@ function Card({ card, onRateCard }) {
     setRevealCount(0);
   };
 
+  const onEditCard = (card) => {
+    history.push(`/editCard/${card.id}`);
+  };
+
   const option3 = card.rate === '10minutes' ? 2 : card.rate || 2;
   const option4 = Math.max(3, Math.floor(option3 * 1.4));
 
@@ -66,6 +70,11 @@ function Card({ card, onRateCard }) {
             </button>
           </div>
         )}
+        <div>
+          <button type="button" onClick={() => onEditCard(card)}>
+            Edit
+          </button>
+        </div>
       </div>
     </div>
   );
