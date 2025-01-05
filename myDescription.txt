@@ -5,6 +5,11 @@ Flashcards.
 Site can be visited at https://smart-anki.onrender.com/ .
 UMI · React hooks
 
+I had to add
+  "engines": {
+    "node": ">=16.0.0"
+  },
+because synckit@0.8.5 required node to be at least 14.18.0 and onrender runs on 14.17.0 by default.
 
 
 

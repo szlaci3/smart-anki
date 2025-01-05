@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Card({ card, onRateCard }) {
   const [revealCount, setRevealCount] = useState(0);
   const [inputValue, setInputValue] = useState<'' | number>(1);
+
+  const navigate = useNavigate();
 
   const handleShowNextSide = () => {
     setRevealCount((prev) => prev + 1);
@@ -14,7 +17,7 @@ function Card({ card, onRateCard }) {
   };
 
   const onEditCard = (card) => {
-    history.push(`/editCard/${card.id}`);
+    navigate(`/editCard/${card.id}`);
   };
 
   const option3 = card.rate === '10minutes' ? 2 : card.rate || 2;
