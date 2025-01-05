@@ -15,7 +15,7 @@ const EditCard = () => {
   useEffect(() => {
     const fetchCard = async () => {
       try {
-        const response = await axios.get(`${SERVERIP}/card/${id}`);
+        const response = await axios.get(`${SERVERIP}/cards/${id}`);
         setCard(response.data);
       } catch (err) {
         setError('Error fetching card data');
