@@ -17,6 +17,7 @@ const EditCard = () => {
       try {
         const response = await axios.get(`${SERVERIP}/cards/${id}`);
         setCard(response.data);
+        setSides(JSON.parse(response.data.sides));
       } catch (err) {
         setError('Error fetching card data');
       } finally {
@@ -46,14 +47,15 @@ const EditCard = () => {
 
   const handleSubmit = async () => {
     try {
-      const card = {
-        id,
-        sides: JSON.stringify(sides),
-        rate: null,
-        reviewedAt: null,
+      // remove empty sides
+      const updatedSides = sides.filter((item) => !!item);
+
+      const updatedCard = {
+        ...card,
+        sides: JSON.stringify(updatedSides),
       };
 
-      await axios.post(`${SERVERIP}/cards/${id}`, card);
+      await axios.put(`${SERVERIP}/cards/${id}`, updatedCard);
     } catch (error) {
       console.error('Error creating card:', error);
     }
@@ -65,8 +67,7 @@ const EditCard = () => {
       {card && (
         <div className="card-form" key={id}>
           <Title>Editing Card</Title>
-          <Title level={2}>Card ID: {card.id}</Title>
-          <Title level={3}>Card Sides:</Title>
+          <Title level={4}>Card ID: {card.id}</Title>
 
           {sides.map((side, index) => {
             let label;
